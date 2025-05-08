@@ -1,0 +1,93 @@
+#+TITLE: ds-vault: Encrypted Password Vault for Emacs
+#+AUTHOR: DeadSwitch | The Cyber Ghost
+#+OPTIONS: toc:nil
+
+* Overview
+
+=ds-vault= is a minimal, hardened Emacs Lisp utility for encrypting, decrypting, and managing a KeePassXC-compatible password database using GnuPG.
+
+It uses the external =gpg= command for maximal control, auditability, and OPSEC transparency.
+
+DeadSwitch does not trust abstractions. This vault is silent, verifiable, and self-destructing by design.
+
+* Why External GPG?
+
+DeadSwitch uses raw =gpg= intentionally:
+
+- Full Transparency: You see every step. No hidden agents.
+- Cross-Tool Compatibility: Decrypt from the terminal if Emacs disappears.
+- No Trust in Caching: Explicit keys, explicit files, explicit logic.
+- Real Signing Flow: =--sign= + =--encrypt= = your data is yours alone.
+
+* Installation
+
+1. Clone or copy this repo.
+2. Add it to your =load-path=:
+
+   #+begin_src elisp
+   (add-to-list 'load-path "/path/to/ds-vault/")
+   (require 'ds-vault)
+   #+end_src
+
+3. Create a config file (=ds-vault-config.el=) that defines:
+
+   #+begin_src elisp
+   (defvar ds/key-id "YOUR-GPG-KEY-ID")
+   (defvar ds/clear-db "/path/to/vault.kdbx")
+   (defvar ds/encrypted-db "/path/to/vault.kdbx.gpg")
+   (defvar ds/backup-dir "/path/to/backups/")
+   (defvar ds/timestamp (format-time-string "%Y%m%d-%H%M%S"))
+   #+end_src
+
+* Usage
+
+Call the commands from =M-x= or bind them to keys.
+
+| Command            | Description                             |
+|--------------------+-----------------------------------------|
+| =ds/encrypt-vault= | Encrypt and sign the vault              |
+| =ds/decrypt-vault= | Decrypt the vault                       |
+| =ds/vault-status=  | Check if vault is sealed or exposed     |
+| =ds/backup-vault=  | Backup the encrypted vault with version |
+| =ds/vault-help=    | Show usage instructions                 |
+
+* Status Output
+
+The status check is brutally honest:
+
+- Vault is ENCRYPTED — you're good.
+- Vault is PLAIN TEXT — seal it now.
+- Insecure state — both files exist. Fix it.
+- No vault files found — nothing to protect... yet.
+
+* Philosophy
+
+DeadSwitch believes encryption should be:
+
+- Explicit
+- Reversible
+- Offline-friendly
+- Not reliant on agents or GUIs
+
+This vault reflects that mindset.
+
+* Example Workflow
+
+#+begin_src emacs-lisp
+M-x ds/vault-status
+M-x ds/encrypt-vault
+M-x ds/backup-vault
+M-x ds/decrypt-vault
+#+end_src
+
+* License
+
+MIT — because freedom includes the freedom to vanish.
+
+* Quote
+
+#+begin_quote
+"In silence, we rise. In the switch, we fade."
+#+end_quote
+
+DeadSwitch | The Cyber Ghost
