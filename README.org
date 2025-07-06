@@ -1,5 +1,5 @@
 #+TITLE: ds-vault: Encrypted Password Vault for Emacs
-#+AUTHOR: DeadSwitch | The Cyber Ghost
+#+AUTHOR: DeadSwitch | The Silent Architect
 #+OPTIONS: toc:nil
 
 * Overview
