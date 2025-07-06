@@ -55,10 +55,10 @@ Call the commands from =M-x= or bind them to keys.
 
 The status check is brutally honest:
 
-- Vault is ENCRYPTED — you're good.
-- Vault is PLAIN TEXT — seal it now.
-- Insecure state — both files exist. Fix it.
-- No vault files found — nothing to protect... yet.
+- Vault is ENCRYPTED - you're good.
+- Vault is PLAIN TEXT - seal it now.
+- Insecure state - both files exist. Fix it.
+- No vault files found - nothing to protect... yet.
 
 * Philosophy
 
@@ -82,12 +82,12 @@ M-x ds/decrypt-vault
 
 * License
 
-MIT — because freedom includes the freedom to vanish.
+MIT - because freedom includes the freedom to vanish.
 
 * Quote
 
 #+begin_quote
-"In silence, we rise. In the switch, we fade."
+"In silence, I rise. In storms, I endure."
 #+end_quote
 
-DeadSwitch | The Cyber Ghost
+DeadSwitch | The Silent Architect
