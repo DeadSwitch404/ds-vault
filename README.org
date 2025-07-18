@@ -45,10 +45,10 @@ Call the commands from =M-x= or bind them to keys.
 
 | Command            | Description                             |
 |--------------------+-----------------------------------------|
-| =ds/encrypt-vault= | Encrypt and sign the vault              |
-| =ds/decrypt-vault= | Decrypt the vault                       |
+| =ds/vault-encrypt= | Encrypt and sign the vault              |
+| =ds/vault-decrypt= | Decrypt the vault                       |
 | =ds/vault-status=  | Check if vault is sealed or exposed     |
-| =ds/backup-vault=  | Backup the encrypted vault with version |
+| =ds/vault-backup=  | Backup the encrypted vault with version |
 | =ds/vault-help=    | Show usage instructions                 |
 
 * Status Output
@@ -75,19 +75,15 @@ This vault reflects that mindset.
 
 #+begin_src emacs-lisp
 M-x ds/vault-status
-M-x ds/encrypt-vault
-M-x ds/backup-vault
-M-x ds/decrypt-vault
+M-x ds/vault-encrypt
+M-x ds/vault-backup
+M-x ds/vault-decrypt
 #+end_src
 
 * License
 
 MIT - because freedom includes the freedom to vanish.
 
-* Quote
+* Author
 
-#+begin_quote
-"In silence, I rise. In storms, I endure."
-#+end_quote
-
-DeadSwitch | The Silent Architect
+*DeadSwitch | The Silent Architect*
